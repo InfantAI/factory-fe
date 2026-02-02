@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ======================================================
+   GLOBAL BASE
+   ====================================================== */
+
+/* Ant Design base */
+:root {
+  color-scheme: light;
+}
+
+/* Global font: Inter SemiBold */
+html,
+body,
+#root {
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 500; /* default */
+  color: #000000;
+  background-color: #F5FBE6;
+}
+
+/* Remove default body margin */
+body {
+  margin: 0;
+}
+
+/* ======================================================
+   SIDEBAR (MENU) FINAL TUNING
+   ====================================================== */
+
+/* Force sidebar & menu background consistent */
+.ant-layout-sider,
+.ant-layout-sider-children,
+.ant-menu-dark,
+.ant-menu-dark .ant-menu-sub,
+.ant-menu-dark.ant-menu-inline {
+  background: #9F8383 !important;
+}
+
+/* Selected item → overlay transparan + border kiri putih */
+.ant-menu-dark .ant-menu-item-selected {
+  background-color: rgba(255, 255, 255, 0.18) !important;
+  color: #fff !important;
+  position: relative;
+}
+
+/* Border kiri putih tipis */
+.ant-menu-dark .ant-menu-item-selected::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background-color: #ffffff;
+}
+
+/* Hover state → overlay ringan */
+.ant-menu-dark .ant-menu-item:hover,
+.ant-menu-dark .ant-menu-submenu-title:hover {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  color: #fff !important;
+}
+
+/* Text & icon color (readable on dark bg) */
+.ant-menu-dark .ant-menu-title-content,
+.ant-menu-dark .ant-menu-item,
+.ant-menu-dark .ant-menu-submenu-title,
+.ant-menu-dark .ant-menu-item-icon,
+.ant-menu-dark .ant-menu-submenu-arrow {
+  color: rgba(255, 255, 255, 0.92) !important;
+}
+
+/* Remove blue focus outline */
+.ant-menu-dark .ant-menu-item:focus-visible {
+  outline: none;
+}
+
+/* ======================================================
+   TOPBAR
+   ====================================================== */
+
+/* Topbar icon hover (subtle UX) */
+.topbar-action:hover {
+  opacity: 0.9;
+}
+
+/* ======================================================
+   OVERLAY (SIDEBAR BACKDROP)
+   ====================================================== */
+
+/* Prevent scroll when sidebar open (optional, UX) */
+body.sidebar-open {
+  overflow: hidden;
+}
+
+/* Global button hover */
+button:hover {
+  opacity: 0.9;
+}
